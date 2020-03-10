@@ -99,7 +99,8 @@
         padding:0;
     }
     div#previous:hover, div#next:hover{
-        cursor: url('../../static/logos/greyCircle.png') 12 12, pointer;
+        /*cursor: url('../../static/logos/greyCircle.png') 12 12, pointer;*/
+        cursor: pointer;
         font-weight: bold;
     }
 
