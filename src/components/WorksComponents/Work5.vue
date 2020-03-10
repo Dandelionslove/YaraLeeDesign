@@ -246,7 +246,7 @@
     }
 
     div.rec2_hover {
-        width: 1166px;
+        width: 116px;
     }
 
     div.rec3_hover {

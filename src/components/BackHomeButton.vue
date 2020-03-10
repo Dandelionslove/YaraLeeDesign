@@ -48,7 +48,8 @@
 <style scoped>
 
     div#back_home:hover{
-        cursor: url('../../static/logos/greyCircle.png') 16 16, pointer;
+        /*cursor: url('../../static/logos/greyCircle.png') 16 16, pointer;*/
+        cursor: pointer;
         font-weight:bold;
         /*color:red;*/
     }
