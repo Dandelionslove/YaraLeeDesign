@@ -6,7 +6,7 @@
                 <span id="ch">CH</span>
             </p>
             <!--<a :href="resumeUrl" target="_blank" download="">Download</a>-->
-            <a :href="resumeUrl" download="">Download</a>
+            <a :href="resumeUrl" download="" target="_blank">Download</a>
         </div>
         <div>
             <img id="resume_img" alt="resume" :src="resumeSrc"/>
