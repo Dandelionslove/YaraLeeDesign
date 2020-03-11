@@ -1,13 +1,13 @@
 <template>
     <div id="work5">
         <div id="work5_about">
-            <img src="../../../static/work5/about@2x.png" alt="about"/>
+            <img :src="AboutUrl" alt="about"/>
         </div>
         <div id="work5_user_exp">
-            <img src="../../../static/work5/exerperience@2x.png" alt="user experience"/>
+            <img :src="UsrexpUrl" alt="user experience"/>
         </div>
         <div id="work5_user_interface">
-            <img src="../../../static/work5/interface@2x.png" alt="user interface"/>
+            <img :src="UsritfUrl" alt="user interface"/>
         </div>
         <div id="work5_menu">
             <div id='back_nome_btn0'>
@@ -36,17 +36,23 @@
 <script>
     import BackHomeButton from '../BackHomeButton'
     import FBButtons from '../FBButtons'
+    import AboutUrl from '../../../static/work5/about@2x.png'
+    import UsrexpUrl from '../../../static/work5/exerperience@2x.png'
+    import UsritfUrl from '../../../static/work5/interface@2x.png'
 
     export default {
         name: "Work5",
         components: {BackHomeButton,FBButtons},
         data(){
             return{
-                select_menu_img_src:'../../../static/work5/Rectangle.png',
-                menu_img_src:'../../../static/work5/Rectangle0.png',
-                home_img_src: '../../static/work5/back.png',
+                // select_menu_img_src:'../../../static/work5/Rectangle.png',
+                // menu_img_src:'../../../static/work5/Rectangle0.png',
+                // home_img_src: '../../static/work5/back.png',
                 home_color_class:'work5_color',
-                work_num:5
+                work_num:5,
+                AboutUrl,
+                UsrexpUrl,
+                UsritfUrl
             }
         },
         methods: {

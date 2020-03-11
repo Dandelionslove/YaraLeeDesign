@@ -49,9 +49,9 @@
         components: {BackHomeButton,FBButtons},
         data() {
             return {
-                select_menu_img_src: '../../../static/work2/Rectangle.png',
-                menu_img_src: '../../../static/work2/Rectangle0.png',
-                home_img_src: '../../static/work2/back.png',
+                // select_menu_img_src: '../../../static/work2/Rectangle.png',
+                // menu_img_src: '../../../static/work2/Rectangle0.png',
+                // home_img_src: '../../static/work2/back.png',
                 home_color_class: 'work2_color',
                 work_num:2,
                 AboutUrl,
