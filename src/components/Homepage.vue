@@ -2,8 +2,8 @@
     <div id="homepage">
         <div id="top">
             <div id="liLogo">
-                <img src="../../static/logos/11-homepage-combined-shape-1@2x.png" alt="" id="liLogo-1"/>
-                <img src="../../static/logos/11-homepage-combined-shape-2@2x.png" alt="" id="liLogo-2"/>
+                <img :src="Shape1Url" alt="" id="liLogo-1"/>
+                <img :src="Shape2Url" alt="" id="liLogo-2"/>
             </div>
             <div>
                 <BriefIntro :show_msg="msg"></BriefIntro>
@@ -27,6 +27,8 @@
     import Resume from './Resume'
     import About from './About'
     import BriefIntro from './BriefIntro'
+    import Shape1Url from '../../static/logos/11-homepage-combined-shape-1@2x.png'
+    import Shape2Url from '../../static/logos/11-homepage-combined-shape-2@2x.png'
 
     export default {
         name: "Homepage",
@@ -40,7 +42,9 @@
                     'About',
                     'BriefIntro'
                 ],
-                msg:0   //0:work, 1:resume/about
+                msg:0,   //0:work, 1:resume/about
+                Shape1Url,
+                Shape2Url
             }
         },
         watch: {},
