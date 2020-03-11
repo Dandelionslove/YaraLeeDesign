@@ -10,13 +10,13 @@
                 <p>yaralee.tj@gmail.com</p>
             </div>
             <div id="link-logos">
-                <a href="https://github.com/YaraLEE" id="githubLink" target="_blank" title="github"><img src="../static/logos/github-logo.png" alt="githubAddress"
+                <a href="https://github.com/YaraLEE" id="githubLink" target="_blank" title="github"><img :src="GithubUrl" alt="githubAddress"
                                                 id="githubLogo"/></a>
-                <a href="https://www.instagram.com/yara_loves_running/" id="instagramLink" target="_blank" title="instagram"><img src="../static/logos/camera-logo.png" alt="cameraAddress"
+                <a href="https://www.instagram.com/yara_loves_running/" id="instagramLink" target="_blank" title="instagram"><img :src="CameraLogoUrl" alt="cameraAddress"
                                                    id="instagramLogo"/></a>
             </div>
         </div>
-        <img src="../static/logos/icon_top@2x.png" alt="fixed-logo" id="fixed-logo" @click.prevent="toTop" title="top"/>
+        <img :src="TopUrl" alt="fixed-logo" id="fixed-logo" @click.prevent="toTop" title="top"/>
     </div>
 </template>
 
@@ -31,6 +31,10 @@
     import Work6 from './components/WorksComponents/Work6'
     import Work7 from './components/WorksComponents/Work7'
     import Work8 from './components/WorksComponents/Work8'
+    import GithubUrl from '../static/logos/github-logo.png'
+    import CameraLogoUrl from '../static/logos/camera-logo.png'
+    import TopUrl from '../static/logos/icon_top@2x.png'
+
 
     export default {
         name: 'App',
@@ -49,6 +53,9 @@
             return {
                 componentName: 'Homepage',
                 // index: 'Homepage'
+                GithubUrl,
+                CameraLogoUrl,
+                TopUrl
             }
         },
         methods: {
