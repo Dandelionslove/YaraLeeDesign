@@ -1,19 +1,27 @@
 <template>
     <div id="FB">
         <div id="previous" @click.prevent="clickPre">
-            <img src="../../static/logos/icon_previews@2x.png">
+            <img :src="PreLogoUrl">
             <p>PREVIOUS</p>
         </div>
         <div id="next" @click.prevent="clickNext">
             <p>NEXT</p>
-            <img src="../../static/logos/icon_next@2x.png">
+            <img :src="NextLogoUrl">
         </div>
     </div>
 </template>
 
 <script>
+    import PreLogoUrl from '../../static/logos/icon_previews@2x.png'
+    import NextLogoUrl from '../../static/logos/icon_next@2x.png'
     export default {
         name: "FBButtons",
+        data(){
+            return{
+                PreLogoUrl,
+                NextLogoUrl
+            }
+        },
         methods:{
             clickPre:function (e) {
                 // console.log(this.cur_work_num);
