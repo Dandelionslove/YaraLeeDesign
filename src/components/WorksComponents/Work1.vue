@@ -3,16 +3,16 @@
         <!--<button @click="toHomePage">Back</button>-->
         <!--<BackHomeButton></BackHomeButton>-->
         <div id="work1_about">
-            <img src="../../../static/work1/about@2x.png" alt="about"/>
+            <img :src="AboutUrl" alt="about"/>
         </div>
         <div id="work1_research">
-            <img src="../../../static/work1/research@2x.png" alt="research"/>
+            <img :src="ResearchUrl" alt="research"/>
         </div>
         <div id="work1_user_exp">
-            <img src="../../../static/work1/userExperience@2x.png" alt="user experience"/>
+            <img :src="UsrexpUrl" alt="user experience"/>
         </div>
         <div id="work1_user_interface">
-            <img src="../../../static/work1/userInterface@2x.png" alt="user interface"/>
+            <img :src="UsritfUrl" alt="user interface"/>
             <ul>
                 <li v-for="video in videos">
                     <video :src="video.src" :id="video.id" preload="auto" class="video" @ended="endVideo" loop></video>
@@ -61,6 +61,24 @@
 <script>
     import BackHomeButton from '../BackHomeButton'
     import FBButtons from '../FBButtons'
+    import AboutUrl from '../../../static/work1/about@2x.png'
+    import ResearchUrl from '../../../static/work1/research@2x.png'
+    import UsrexpUrl from '../../../static/work1/userExperience@2x.png'
+    import UsritfUrl from '../../../static/work1/userInterface@2x.png'
+    import IphoneUrl from '../../../static/work1/iPhoneXS@1x.png'
+    // import v from '../../assets/videos/work01_video_1.mp4'
+    import Video1Url from '../../../static/work1/videos/work01_video_1.mp4'
+    import Video2Url from '../../../static/work1/videos/work01_video_2.mp4'
+    import Video3Url from '../../../static/work1/videos/work01_video_3.mp4'
+    import Video4Url from '../../../static/work1/videos/work01_video_4.mp4'
+    import Video5Url from '../../../static/work1/videos/work01_video_5.mp4'
+    import Video6Url from '../../../static/work1/videos/work01_video_6.mp4'
+    import Video7Url from '../../../static/work1/videos/work01_video_7.mp4'
+    import Video8Url from '../../../static/work1/videos/work01_video_8.mp4'
+    import Video9Url from '../../../static/work1/videos/work01_video_9.mp4'
+    import Video10Url from '../../../static/work1/videos/work01_video_10.mp4'
+    import Video11Url from '../../../static/work1/videos/work01_video_11.mp4'
+
 
     export default {
         name: "work1",
@@ -70,17 +88,22 @@
         },
         data() {
             return {
-                control_src: '../../../static/work1/play.png',
-                iphone_src: '../../../static/work1/iPhoneXS@1x.png',
+                // control_src: '../../../static/work1/play.png',
+                iphone_src: IphoneUrl,
                 video_num: 11,
                 videos: [
                     // {id:'work1_video1', src:'../../../static/work1/videos/work01_video_1.mp4',ctl_id:'control_1'},
                 ],
-                home_img_src: "../../static/work1/back.png",
-                select_menu_img_src: "../../../static/work1/Rectangle.png",
-                menu_img_src: "../../../static/work1/Rectangle0.png",
+                // home_img_src: "../../static/work1/back.png",
+                // select_menu_img_src: "../../../static/work1/Rectangle.png",
+                // menu_img_src: "../../../static/work1/Rectangle0.png",
                 home_color_class: 'work1_color',
-                work_num: 1
+                work_num: 1,
+                AboutUrl,
+                ResearchUrl,
+                UsrexpUrl,
+                UsritfUrl,
+                VideosUrl:[Video1Url,Video2Url,Video3Url,Video4Url,Video5Url,Video6Url,Video7Url,Video8Url,Video9Url,Video10Url,Video11Url]
             }
         },
         methods: {
@@ -106,9 +129,9 @@
                 this.menuChange(3);
 
                 let v1 = document.getElementById('work1_video1');
-                let c1 = document.getElementById('control_1');
+                // let c1 = document.getElementById('control_1');
                 v1.currentTime = 0;
-                c1.classList.remove('control_click');
+                // c1.classList.remove('control_click');
             },
             playVideo: function (e) {
                 let id = e.target.id;
@@ -116,9 +139,9 @@
                 let v_num = id.substring(id.indexOf('_') + 1);
                 // console.log(v_num);
                 let v = document.getElementById('work1_video' + v_num);
-                let c = document.getElementById('control_' + v_num);
+                // let c = document.getElementById('control_' + v_num);
                 v.currentTime = 0;
-                c.classList.add('control_click');
+                // c.classList.add('control_click');
                 v.play();
             },
             endVideo: function (e) {
@@ -261,10 +284,12 @@
         },
         created() {
             let id_pre = 'work1_video';
-            let src_pre = '../../../static/work1/videos/work01_video_';
+            // let src_pre = '../../static/work1/videos/work01_video_';
+            let src_pre = '../assets/videos/work01_video_';
             for (let i = 1; i <= this.video_num; i++) {
                 let id = id_pre + i;
-                let src = src_pre + i + '.mp4';
+                // let src = src_pre + i + '.mp4';
+                let src = this.VideosUrl[i-1];
                 let ctl_id = 'control_' + i;
                 let bg_id = 'bg_' + i;
                 this.videos.push({id: id, src: src, ctl_id: ctl_id, bg_id: bg_id});
@@ -438,11 +463,6 @@
         right: 31%;
     }
 
-    img#control_1 {
-        top: 5.4%;
-        right: 36%;
-    }
-
     video#work1_video2 {
         top: 22.2%;
         right: 22%;
@@ -451,11 +471,6 @@
     img#bg_2 {
         top: 22.1%;
         right: 31%;
-    }
-
-    img#control_2 {
-        top: 23.5%;
-        right: 36%;
     }
 
     img#bg_3 {
@@ -468,10 +483,6 @@
         right: 44.5%;
     }
 
-    img#control_3 {
-        top: 27.5%;
-        right: 58.5%;
-    }
 
     img#bg_4 {
         top: 30%;
@@ -483,10 +494,6 @@
         right: 22%;
     }
 
-    img#control_4 {
-        top: 31.5%;
-        right: 36%;
-    }
 
     img#bg_5 {
         top: 33.8%;
@@ -498,10 +505,6 @@
         right: 44.5%;
     }
 
-    img#control_5 {
-        top: 35.3%;
-        right: 58.5%;
-    }
 
     img#bg_6 {
         top: 42.4%;
@@ -513,10 +516,6 @@
         right: 44.5%;
     }
 
-    img#control_6 {
-        top: 43.9%;
-        right: 58.5%;
-    }
 
     img#bg_7 {
         top: 46.2%;
@@ -526,11 +525,6 @@
     video#work1_video7 {
         top: 46.3%;
         right: 22%;
-    }
-
-    img#control_7 {
-        top: 47.8%;
-        right: 36%;
     }
 
     img#bg_8 {
@@ -543,10 +537,7 @@
         right: 44.5%;
     }
 
-    img#control_8 {
-        top: 51.8%;
-        right: 58.5%;
-    }
+
 
     img#bg_9 {
         top: 60.8%;
@@ -558,10 +549,7 @@
         right: 22%;
     }
 
-    img#control_9 {
-        top: 62.3%;
-        right: 36%;
-    }
+
 
     img#bg_10 {
         top: 64.8%;
@@ -573,10 +561,7 @@
         right: 44.5%;
     }
 
-    img#control_10 {
-        top: 66.3%;
-        right: 58.5%;
-    }
+
 
     img#bg_11 {
         top: 70.8%;
@@ -588,10 +573,6 @@
         right: 33.3%;
     }
 
-    img#control_11 {
-        top: 72.3%;
-        right: 47.5%;
-    }
 
 
 </style>
