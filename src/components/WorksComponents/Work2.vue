@@ -1,13 +1,13 @@
 <template>
     <div id="work2">
         <div id="work2_about_research">
-            <img src="../../../static/work2/about&research@2x.png" alt="about & research"/>
+            <img :src="AboutUrl" alt="about & research"/>
         </div>
         <div id="work2_user_exp">
-            <img src="../../../static/work2/userexperience@2x.png" alt="user experience"/>
+            <img :src="UsrexpUrl" alt="user experience"/>
         </div>
         <div id="work2_user_interface">
-            <img src="../../../static/work2/userinterface@2x.png" alt="user interface"/>
+            <img :src="UsritfUrl" alt="user interface"/>
         </div>
         <div id="work2_menu">
             <div id="back_nome_btn0">
@@ -39,6 +39,10 @@
 <script>
     import BackHomeButton from '../BackHomeButton'
     import FBButtons from '../FBButtons'
+    import AboutUrl from '../../../static/work2/about&research@2x.png'
+    import UsrexpUrl from '../../../static/work2/userexperience@2x.png'
+    import UsritfUrl from '../../../static/work2/userinterface@2x.png'
+
 
     export default {
         name: "Work2",
@@ -49,7 +53,10 @@
                 menu_img_src: '../../../static/work2/Rectangle0.png',
                 home_img_src: '../../static/work2/back.png',
                 home_color_class: 'work2_color',
-                work_num:2
+                work_num:2,
+                AboutUrl,
+                UsrexpUrl,
+                UsritfUrl
             }
         },
         methods: {
