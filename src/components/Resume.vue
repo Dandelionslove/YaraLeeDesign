@@ -5,7 +5,8 @@
                 /
                 <span id="ch">CH</span>
             </p>
-            <a :href="resumeUrl" target="_blank">Download</a>
+            <!--<a :href="resumeUrl" target="_blank" download="">Download</a>-->
+            <a :href="resumeUrl" download="">Download</a>
         </div>
         <div>
             <img id="resume_img" alt="resume" :src="resumeSrc"/>
@@ -25,9 +26,11 @@
                 resumeEnSrc,
                 resumeChSrc,
                 resumeSrc: resumeEnSrc,
-                // resumeEnUrl:'http://127.0.0.1:8080/static/resume/download_resume_en.pdf',
+                // resumeEnUrl : '../assets/TongjiUniversity_YaraLee_resume_EN.pdf',
+                // resumeChUrl:'../assets/同济大学_李圆圆_中文简历.pdf',
+                // resumeUrl:'../assets/TongjiUniversity_YaraLee_resume_EN.pdf'
                 resumeEnUrl:'../../static/resume/TongjiUniversity_YaraLee_resume_EN.pdf',
-                resumeChUrl:'../../static/resume/同济大学_李圆圆_中文简历.pdf',
+                resumeChUrl: '../../static/resume/同济大学_李圆圆_中文简历.pdf',
                 resumeUrl:'../../static/resume/TongjiUniversity_YaraLee_resume_EN.pdf'
             }
         },
@@ -60,7 +63,7 @@
         },
         mounted: function () {
             document.getElementById('en').classList.add('en_select');
-            let path=window.location.href;
+            // let path=window.location.href;
 
         },
         beforeRouteLeave(to,from,next){
