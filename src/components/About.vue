@@ -1,14 +1,20 @@
 <template>
 <div>
   <div id="about">
-    <img src="../../static/about/img_about@2x.png" alt="about me" id="about_me"/>
+    <img :src="AboutImgUrl" alt="about me" id="about_me"/>
   </div>
 </div>
 </template>
 
 <script>
+  import AboutImgUrl from '../../static/about/img_about@2x.png'
     export default {
-        name: "About"
+        name: "About",
+        data(){
+            return{
+                AboutImgUrl
+            }
+        }
     }
 </script>
 
