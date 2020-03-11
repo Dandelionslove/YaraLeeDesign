@@ -21,14 +21,31 @@
 </template>
 
 <script>
-import Work1 from './WorksComponents/Work1'
-import Work2 from './WorksComponents/Work2'
-import Work3 from './WorksComponents/Work3'
-import Work4 from './WorksComponents/Work4'
-import Work5 from './WorksComponents/Work5'
-import Work6 from './WorksComponents/Work6'
-import Work7 from './WorksComponents/Work7'
-import Work8 from './WorksComponents/Work8'
+// import Work1 from './WorksComponents/Work1'
+// import Work2 from './WorksComponents/Work2'
+// import Work3 from './WorksComponents/Work3'
+// import Work4 from './WorksComponents/Work4'
+// import Work5 from './WorksComponents/Work5'
+// import Work6 from './WorksComponents/Work6'
+// import Work7 from './WorksComponents/Work7'
+// import Work8 from './WorksComponents/Work8'
+import Work1Url from '../../static/works/1.png'
+import Work2Url from '../../static/works/2.png'
+import Work3Url from '../../static/works/3.png'
+import Work4Url from '../../static/works/4.png'
+import Work5Url from '../../static/works/5.png'
+import Work6Url from '../../static/works/6.png'
+import Work7Url from '../../static/works/7.png'
+import Work8Url from '../../static/works/8.png'
+import Work1ActiveUrl from '../../static/works/1-active.png'
+import Work2ActiveUrl from '../../static/works/2-active.png'
+import Work3ActiveUrl from '../../static/works/3-active.png'
+import Work4ActiveUrl from '../../static/works/4-active.png'
+import Work5ActiveUrl from '../../static/works/5-active.png'
+import Work6ActiveUrl from '../../static/works/6-active.png'
+import Work7ActiveUrl from '../../static/works/7-active.png'
+import Work8ActiveUrl from '../../static/works/8-active.png'
+
 
   export default {
     name: "Work",
@@ -36,16 +53,16 @@ import Work8 from './WorksComponents/Work8'
       return {
         works: [],
         leftWorks: [
-          {name: 'Work1', url: '../../static/works/1.png', activeUrl: '../../static/works/1-active.png', type:'APP Design',id:'work1'},
-          {name: 'Work2', url: '../../static/works/2.png', activeUrl: '../../static/works/2-active.png', type:'App Redesign',id:'work2'},
-          {name: 'Work3', url: '../../static/works/3.png', activeUrl: '../../static/works/3-active.png', type:'Product Design',id:'work3'},
-          {name: 'Work4', url: '../../static/works/4.png', activeUrl: '../../static/works/4-active.png', type:'Product Design',id:'work4'},
+          {name: 'Work1', url: Work1Url, activeUrl: Work1ActiveUrl, type:'APP Design',id:'work1'},
+          {name: 'Work2', url: Work2Url, activeUrl: Work2ActiveUrl, type:'App Redesign',id:'work2'},
+          {name: 'Work3', url: Work3Url, activeUrl: Work3ActiveUrl, type:'Product Design',id:'work3'},
+          {name: 'Work4', url: Work4Url, activeUrl: Work4ActiveUrl, type:'Product Design',id:'work4'},
         ],
         rightWorks: [
-          {name: 'Work5', url: '../../static/works/5.png', activeUrl: '../../static/works/5-active.png', type:'Mini Program Design',id:'work5'},
-          {name: 'Work6', url: '../../static/works/6.png', activeUrl: '../../static/works/6-active.png', type:'Product Design',id:'work6'},
-          {name: 'Work7', url: '../../static/works/7.png', activeUrl: '../../static/works/7-active.png', type:'Product Design',id:'work7'},
-          {name: 'Work8', url: '../../static/works/8.png', activeUrl: '../../static/works/8-active.png', type:'Product Design',id:'work8'}
+          {name: 'Work5', url: Work5Url, activeUrl: Work5ActiveUrl, type:'Mini Program Design',id:'work5'},
+          {name: 'Work6', url: Work6Url, activeUrl: Work6ActiveUrl, type:'Product Design',id:'work6'},
+          {name: 'Work7', url: Work7Url, activeUrl: Work7ActiveUrl, type:'Product Design',id:'work7'},
+          {name: 'Work8', url: Work8Url, activeUrl: Work8ActiveUrl, type:'Product Design',id:'work8'}
         ],
         timer: null,
         isMouseHover: false

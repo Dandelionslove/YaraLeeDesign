@@ -14,14 +14,17 @@
 </template>
 
 <script>
+    import resumeEnSrc from "../../static/resume/img_resume_en@2x.png"
+    import resumeChSrc from '../../static/resume/img_resume_ch@2x.png'
+
     export default {
         name: "Resume",
         data() {
             return {
                 resumeType: 0, // 0 : en, 1 : ch
-                resumeEnSrc: "../../static/resume/img_resume_en@2x.png",
-                resumeChSrc: '../../static/resume/img_resume_ch@2x.png',
-                resumeSrc: "../../static/resume/img_resume_en@2x.png",
+                resumeEnSrc,
+                resumeChSrc,
+                resumeSrc: resumeEnSrc,
                 // resumeEnUrl:'http://127.0.0.1:8080/static/resume/download_resume_en.pdf',
                 resumeEnUrl:'../../static/resume/TongjiUniversity_YaraLee_resume_EN.pdf',
                 resumeChUrl:'../../static/resume/同济大学_李圆圆_中文简历.pdf',
