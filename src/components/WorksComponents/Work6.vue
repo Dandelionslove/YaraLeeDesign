@@ -1,10 +1,10 @@
 <template>
     <div id="work6">
         <div id="work6_about">
-            <img src="../../../static/work6/about@2x.png" alt="about"/>
+            <img :src="AboutUrl" alt="about"/>
         </div>
         <div id="work6_research">
-            <img src="../../../static/work6/research@2x.png" alt="research"/>
+            <img :src="ResearchUrl" alt="research"/>
             <ul>
                 <li v-for="video in videos">
                     <video :src="video.src" :id="video.id" preload="auto" class="video" @ended="endVideo"
@@ -14,10 +14,10 @@
             </ul>
         </div>
         <div id="work6_concept">
-            <img src="../../../static/work6/concept@2x.png" alt="concept"/>
+            <img :src="ConceptUrl" alt="concept"/>
         </div>
         <div id="work6_product">
-            <img src="../../../static/work6/product@2x.png" alt="product"/>
+            <img :src="ProductUrl" alt="product"/>
             <video :src="video_4.src" :id="video_4.id" preload="auto" class="video" @ended="endVideo" controls></video>
             <!--<img :src="control_src" :id="video_4.ctl_id" @click.prevent="playVideo" class="video_control" />-->
         </div>
@@ -57,6 +57,15 @@
 <script>
     import BackHomeButton from '../BackHomeButton'
     import FBButtons from '../FBButtons'
+    import AboutUrl from '../../../static/work6/about@2x.png'
+    import ResearchUrl from '../../../static/work6/research@2x.png'
+    import ConceptUrl from '../../../static/work6/concept@2x.png'
+    import ProductUrl from '../../../static/work6/product@2x.png'
+    import Video1Url from '../../../static/work6/videos/opportunity1.mp4'
+    import Video2Url from '../../../static/work6/videos/opportunity2.mp4'
+    import Video3Url from '../../../static/work6/videos/opportunity3.mp4'
+    import Video4Url from '../../../static/work6/videos/opportunity4.mp4'
+
 
     export default {
         name: "Work6",
@@ -68,11 +77,16 @@
                 video_4: {},
                 control_src: '../../../static/work6/play.png',
                 video_num: 4,
-                home_img_src: '../../static/work6/back.png',
-                select_menu_img_src: "../../../static/work6/Rectangle.png",
-                menu_img_src: "../../../static/work6/Rectangle0.png",
+                // home_img_src: '../../static/work6/back.png',
+                // select_menu_img_src: "../../../static/work6/Rectangle.png",
+                // menu_img_src: "../../../static/work6/Rectangle0.png",
                 home_color_class:'work6_color',
-                work_num:6
+                work_num:6,
+                AboutUrl,
+                ResearchUrl,
+                ConceptUrl,
+                ProductUrl,
+                VideosUrl:[Video1Url,Video2Url,Video3Url,Video4Url],
             }
         },
         components: {BackHomeButton,FBButtons},
@@ -226,7 +240,8 @@
             let src_pre = '../../../static/work6/videos/opportunity';
             for (let i = 1; i <= this.video_num; i++) {
                 let id = id_pre + i;
-                let src = src_pre + i + '.mp4';
+                // let src = src_pre + i + '.mp4';
+                let src = this.VideosUrl[i-1];
                 let ctl_id = "control6_" + i;
                 if (i === this.video_num) {
                     this.video_4 = {id: id, src: src, ctl_id: ctl_id};
