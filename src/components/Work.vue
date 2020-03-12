@@ -199,7 +199,7 @@ import Work8ActiveUrl from '../../static/works/8-active.png'
           }
           else if(i==2)
           {
-              nameInfo='Zone Collaboration Space';
+              nameInfo='Arduino Programming Robot';
           }
           else if(i==3)
           {
@@ -223,7 +223,7 @@ import Work8ActiveUrl from '../../static/works/8-active.png'
         }
         else if(i==1)
         {
-            nameInfo='Arduino Programming Robot';
+            nameInfo='Zone Collaboration Space';
         }
         else if(i==2)
         {
