@@ -3,9 +3,11 @@
         <keep-alive>
         <component :is="componentName" @func="getMsgFromComp"></component>
         </keep-alive>
-        <!--<hr>-->
+        <hr>
         <div id="bottom">
-            <hr>
+            <!--<div id="hr">-->
+            <!--<hr>-->
+            <!--</div>-->
             <div id="email">
                 <p>yaralee.tj@gmail.com</p>
             </div>
@@ -76,7 +78,7 @@
                 timer = requestAnimationFrame(function fn() {
                     var oTop=document.body.scrollTop || document.documentElement.scrollTop;
                     if(oTop>0){
-                        scrollBy(0,-10);
+                        scrollBy(0,-50);
                         timer=requestAnimationFrame(fn);
                     }else{
                         cancelAnimationFrame(timer);
@@ -178,5 +180,9 @@
     img#fixed-logo:hover{
         cursor: pointer;
         transform:scale(1.1,1.1);
+    }
+    hr{
+        /*width:120%;*/
+        margin:0;
     }
 </style>
