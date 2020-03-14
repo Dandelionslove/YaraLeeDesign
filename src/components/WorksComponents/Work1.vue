@@ -12,10 +12,19 @@
             <img :src="UsrexpUrl" alt="user experience"/>
         </div>
         <div id="work1_user_interface">
-            <img :src="UsritfUrl" alt="user interface"/>
+            <div id="itf_imgs">
+                <img :src="ItfUrl1" alt="user interface" />
+                <img :src="ItfUrl2" alt="user interface" />
+                <img :src="ItfUrl3" alt="user interface" />
+                <img :src="ItfUrl4" alt="user interface" />
+                <img :src="ItfUrl5" alt="user interface" />
+                <img :src="ItfUrl6" alt="user interface" />
+            </div>
+            <!--<img :src="UsritfUrl" alt="user interface"/>-->
             <ul>
                 <li v-for="video in videos">
-                    <video :src="video.src" :id="video.id" preload="auto" class="video" @ended="endVideo" loop></video>
+                    <video :src="video.src" :id="video.id" preload="auto" class="video" @ended="endVideo" autoplay></video>
+                    <!--<video :src="video.src" :id="video.id" preload="auto" class="video" @ended="endVideo" loop autoplay></video>-->
                     <img :src="iphone_src" alt="iPhoneXS" :id="video.bg_id" class="video_bg"/>
                     <!--<img :src="control_src" :id="video.ctl_id" @click.prevent="playVideo" class="video_control"/>-->
                 </li>
@@ -64,9 +73,9 @@
     import AboutUrl from '../../../static/work1/about@2x.png'
     import ResearchUrl from '../../../static/work1/research@2x.png'
     import UsrexpUrl from '../../../static/work1/userExperience@2x.png'
-    import UsritfUrl from '../../../static/work1/userInterface@2x.png'
+    // import UsritfUrl from '../../../static/work1/userInterface@2x.png'
+    // import UsritfUrl from 'work1res/userInterface@2x.png'
     import IphoneUrl from '../../../static/work1/iPhoneXS@1x.png'
-    // import v from '../../assets/videos/work01_video_1.mp4'
     import Video1Url from '../../../static/work1/videos/work01_video_1.mp4'
     import Video2Url from '../../../static/work1/videos/work01_video_2.mp4'
     import Video3Url from '../../../static/work1/videos/work01_video_3.mp4'
@@ -78,6 +87,12 @@
     import Video9Url from '../../../static/work1/videos/work01_video_9.mp4'
     import Video10Url from '../../../static/work1/videos/work01_video_10.mp4'
     import Video11Url from '../../../static/work1/videos/work01_video_11.mp4'
+    import ItfUrl1 from '../../../static/work1/interface/userInterface01@2x.png'
+    import ItfUrl2 from '../../../static/work1/interface/userInterface02@2x.png'
+    import ItfUrl3 from '../../../static/work1/interface/userInterface03@2x.png'
+    import ItfUrl4 from '../../../static/work1/interface/userInterface04@2x.png'
+    import ItfUrl5 from '../../../static/work1/interface/userInterface05@2x.png'
+    import ItfUrl6 from '../../../static/work1/interface/userInterface06@2x.png'
 
 
     export default {
@@ -102,7 +117,13 @@
                 AboutUrl,
                 ResearchUrl,
                 UsrexpUrl,
-                UsritfUrl,
+                // UsritfUrl,
+                ItfUrl1,
+                ItfUrl2,
+                ItfUrl3,
+                ItfUrl4,
+                ItfUrl5,
+                ItfUrl6,
                 VideosUrl:[Video1Url,Video2Url,Video3Url,Video4Url,Video5Url,Video6Url,Video7Url,Video8Url,Video9Url,Video10Url,Video11Url]
             }
         },
@@ -133,25 +154,30 @@
                 v1.currentTime = 0;
                 // c1.classList.remove('control_click');
             },
-            playVideo: function (e) {
-                let id = e.target.id;
-                //console.log(id); control_1
-                let v_num = id.substring(id.indexOf('_') + 1);
-                // console.log(v_num);
-                let v = document.getElementById('work1_video' + v_num);
-                // let c = document.getElementById('control_' + v_num);
-                v.currentTime = 0;
-                // c.classList.add('control_click');
-                v.play();
-            },
+            // playVideo: function (e) {
+            //     let id = e.target.id;
+            //     //console.log(id); control_1
+            //     let v_num = id.substring(id.indexOf('_') + 1);
+            //     // console.log(v_num);
+            //     let v = document.getElementById('work1_video' + v_num);
+            //     // let c = document.getElementById('control_' + v_num);
+            //     v.currentTime = 0;
+            //     // c.classList.add('control_click');
+            //     v.play();
+            // },
             endVideo: function (e) {
                 let id = e.target.id;
-                let v_num = id.slice(id.length - 1);
+                let v_num = id.slice(id.indexOf('video')+5);
+                // console.log(v_num);
                 let v = document.getElementById('work1_video' + v_num);
+                console.log(id.indexOf('video'));
                 // let c = document.getElementById('control_' + v_num);
                 v.currentTime = 0;
                 // c.classList.remove('control_click');
-                var replay=self.setInterval(function () {
+                // var replay=self.setInterval(function () {
+                //     v.play();
+                // },3000);
+                var replay=self.setTimeout(function () {
                     v.play();
                 },3000);
             },
@@ -268,12 +294,12 @@
             }
         },
         mounted() {
-            for (let i = 1; i <= this.video_num; i++) {
-                let v = document.getElementById('work1_video' + i);
-                v.currentTime = 0;
-                // v.pause();
-                v.play();
-            }
+            // for (let i = 1; i <= this.video_num; i++) {
+            //     let v = document.getElementById('work1_video' + i);
+            //     v.currentTime = 0;
+            //     // v.pause();
+            //     v.play();
+            // }
             document.querySelector('#work1_about').scrollIntoView();
             // document.querySelector('#work1_about_btn0').classList.add('menu_select');
             this.menuChange(0);
@@ -319,7 +345,7 @@
         z-index:-1;
     }
     div#work1_user_interface{
-        margin-bottom: -260px;
+        margin-bottom: -94px;
         /*z-index: -10;*/
     }
 
@@ -328,6 +354,10 @@
         height: 100%;
         padding: 0;
         margin: 0;
+    }
+
+    div#itf_imgs img{
+        margin-bottom:-20px;
     }
 
     div#work1_menu {
@@ -450,127 +480,126 @@
     img.control_click {
         display: none;
     }
-
+    img#bg_1 {
+        top: 3.91%;
+        right: 28%;
+    }
     video#work1_video1 {
-        top: 3.9%;
-        right: 22%;
+        top: 4.0%;
+        right: 19%;
         /*z-index: 100;*/
         /*border:1px solid red;*/
     }
 
-    img#bg_1 {
-        top: 3.8%;
-        right: 31%;
+
+    img#bg_2 {
+        top: 22.4%;
+        right: 28.5%;
     }
 
     video#work1_video2 {
-        top: 22.2%;
-        right: 22%;
-    }
-
-    img#bg_2 {
-        top: 22.1%;
-        right: 31%;
+        top: 22.5%;
+        right: 19.2%;
     }
 
     img#bg_3 {
-        top: 25.9%;
-        right: 53.5%;
+        top: 26.5%;
+        right: 51.5%;
     }
 
     video#work1_video3 {
-        top: 26%;
-        right: 44.5%;
+        top: 26.6%;
+        right: 42.5%;
     }
 
 
     img#bg_4 {
-        top: 30%;
-        right: 31%;
+        top: 30.5%;
+        right: 28.3%;
     }
 
     video#work1_video4 {
-        top: 30.1%;
-        right: 22%;
+        top: 30.6%;
+        right: 19.2%;
     }
 
 
     img#bg_5 {
-        top: 33.8%;
-        right: 53.5%;
+        top: 34.6%;
+        right: 52%;
     }
 
     video#work1_video5 {
-        top: 33.9%;
-        right: 44.5%;
+        top: 34.7%;
+        right: 43%;
     }
 
 
     img#bg_6 {
-        top: 42.4%;
-        right: 53.5%;
+        top: 43.3%;
+        right: 52%;
     }
 
     video#work1_video6 {
-        top: 42.5%;
-        right: 44.5%;
+        top: 43.4%;
+        right: 43%;
     }
 
 
     img#bg_7 {
-        top: 46.2%;
-        right: 31%;
+        top: 47.1%;
+        right: 28.5%;
     }
 
     video#work1_video7 {
-        top: 46.3%;
-        right: 22%;
+        top: 47.2%;
+        right: 19.1%;
     }
 
     img#bg_8 {
-        top: 50.3%;
-        right: 53.5%;
+        top: 51.4%;
+        right: 52%;
     }
 
     video#work1_video8 {
-        top: 50.4%;
-        right: 44.5%;
+        top: 51.5%;
+        right: 43%;
     }
 
 
 
     img#bg_9 {
-        top: 60.8%;
-        right: 31%;
+        top: 61.7%;
+        right: 28.5%;
     }
 
     video#work1_video9 {
-        top: 60.9%;
-        right: 22%;
+        top: 61.8%;
+        right: 19.5%;
     }
 
 
 
     img#bg_10 {
-        top: 64.8%;
-        right: 53.5%;
+        top: 65.8%;
+        right: 51.5%;
     }
 
     video#work1_video10 {
-        top: 64.9%;
-        right: 44.5%;
+        top: 65.9%;
+        right: 42.5%;
     }
 
 
 
     img#bg_11 {
-        top: 70.8%;
+        top: 71.95%;
         right: 42.3%;
     }
 
     video#work1_video11 {
-        top: 70.9%;
-        right: 33.3%;
+        top: 72.05%;
+        right: 33.35%;
     }
 
 

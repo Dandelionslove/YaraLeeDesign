@@ -78,7 +78,7 @@
                 timer = requestAnimationFrame(function fn() {
                     var oTop=document.body.scrollTop || document.documentElement.scrollTop;
                     if(oTop>0){
-                        scrollBy(0,-50);
+                        scrollBy(0,-100);
                         timer=requestAnimationFrame(fn);
                     }else{
                         cancelAnimationFrame(timer);
