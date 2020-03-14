@@ -15,7 +15,12 @@ module.exports = {
   entry: {
     app: './src/main.js'
   },
-  output: {
+    // externals: {
+    // 'vue':'Vue',
+    //     'vue-router':'VueRouter',
+    //     'vuex':'Vuex'
+    // },
+    output: {
     path: config.build.assetsRoot,
     filename: '[name].js',
     publicPath: process.env.NODE_ENV === 'production'
